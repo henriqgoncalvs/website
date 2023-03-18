@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@next-auth/prisma-adapter': ^1.0.5
+  '@phosphor-icons/react': ^2.0.5
   '@prisma/client': ^4.9.0
   '@tanstack/react-query': ^4.20.2
   '@trpc/client': ^10.9.0
@@ -42,6 +43,7 @@ specifiers:
 
 dependencies:
   '@next-auth/prisma-adapter': 1.0.5_knaw3qxw4zwoiwojd3fn43zthi
+  '@phosphor-icons/react': 2.0.5_biqbaboplfbrettd7655fr4n2y
   '@prisma/client': 4.11.0_prisma@4.11.0
   '@tanstack/react-query': 4.26.1_biqbaboplfbrettd7655fr4n2y
   '@trpc/client': 10.16.0_@trpc+server@10.16.0
@@ -320,6 +322,17 @@ packages:
 
   /@panva/hkdf/1.0.4:
     resolution: {integrity: sha512-003xWiCuvePbLaPHT+CRuaV4GlyCAVm6XYSbBZDHoWZGn1mNkVKFaDbGJjjxmEFvizUwlCoM6O18FCBMMky2zQ==}
+    dev: false
+
+  /@phosphor-icons/react/2.0.5_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-Ghohi+Dk+Y0RoI1vra3jH2QC3sO6C16a/Km0gfy05ONIsC62Vwn1SK2Qaim77VPyn1FS7qjMxocdi9kx6btvXg==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>= 16.8'
+      react-dom: '>= 16.8'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /@pkgr/utils/2.3.1:

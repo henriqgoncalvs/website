@@ -20,6 +20,6 @@
 
 @layer base {
   body {
-    @apply bg-midnight;
+    @apply bg-midnight text-yellow-50/90;
   }
 }
