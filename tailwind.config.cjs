@@ -1,8 +1,22 @@
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
 /** @type {import('tailwindcss').Config} */
 const config = {
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: 'class',
+  content: [
+    './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
+  ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Satoshi', ...fontFamily.sans],
+        mono: ['Cascadia', ...fontFamily.mono],
+      },
+      colors: {
+        light: '#FFFEFC',
+        midnight: '#121212',
+      },
+    },
   },
   plugins: [],
 };

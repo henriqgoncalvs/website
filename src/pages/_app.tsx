@@ -1,4 +1,9 @@
-import { type AppType } from 'next/app';
+import type { NextComponentType } from 'next';
+import {
+  type AppContext,
+  type AppInitialProps,
+  type AppLayoutProps,
+} from 'next/app';
 import { type Session } from 'next-auth';
 import { SessionProvider } from 'next-auth/react';
 
@@ -6,13 +11,19 @@ import { api } from '@/utils/api';
 
 import '@/styles/globals.css';
 
-const MyApp: AppType<{ session: Session | null }> = ({
-  Component,
-  pageProps: { session, ...pageProps },
-}) => {
+const MyApp: NextComponentType<
+  AppContext,
+  AppInitialProps,
+  AppLayoutProps<{ session: Session | null }>
+> = ({ Component, pageProps: { session, ...pageProps } }) => {
+  const getLayout =
+    Component.getLayout ?? ((component) => component);
+
+  const pageContent = getLayout(<Component {...pageProps} />);
+
   return (
     <SessionProvider session={session}>
-      <Component {...pageProps} />
+      {pageContent}
     </SessionProvider>
   );
 };
