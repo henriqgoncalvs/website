@@ -1,165 +1,102 @@
-import {
-  Atom,
-  Cake,
-  CaretUp,
-  CaretDown,
-  MapPin,
-  LinkSimple,
-  GithubLogo,
-  LinkedinLogo,
-  MusicNote,
-} from '@phosphor-icons/react';
 import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { AiFillGithub } from 'react-icons/ai';
+import { BiMap } from 'react-icons/bi';
+import { FaDrum, FaReact } from 'react-icons/fa';
+import { GrLinkedinOption } from 'react-icons/gr';
+import { MdOutlineCake } from 'react-icons/md';
 
 export const ProfileBanner = () => {
-  const [bannerExpanded, setBannerExpanded] = useState(false);
-
   return (
     <div className="flex flex-col items-start text-xl">
-      <div
-        className={clsx(
-          'relative w-full overflow-hidden rounded-2xl bg-midnight',
-          bannerExpanded ? 'h-96' : 'h-40'
-        )}
-      >
-        <Image
-          src="/images/hubble-wp.jpg"
-          className="absolute top-0 -translate-y-[130px] rounded-2xl"
-          width="755"
-          height="726"
-          alt="A picture the hubble satellite took on March 20th, 1996"
-        />
-
-        {bannerExpanded && (
-          <Link
-            href="https://hubblesite.org/contents/media/images/2000/34/1007-Image.html"
-            className="absolute top-6 left-6 flex items-center gap-2 rounded-2xl bg-neutral-900/40 p-4 text-sm text-white"
-          >
-            <LinkSimple size={16} />
-            <span>Colliding Galaxies NGC 6745</span>
-          </Link>
-        )}
-      </div>
-
       <div className="z-10 flex flex-col gap-4 px-4">
         <div
           className={clsx(
-            'flex w-full items-center justify-between',
-            bannerExpanded && 'pb-5'
+            'flex w-full items-start justify-between pb-5'
           )}
         >
-          <div className="flex items-end gap-2">
-            <div
-              className={clsx(
-                '-mt-16 w-fit rounded-full bg-midnight p-2  ring-zinc-600/10',
-                bannerExpanded ? 'ring-[5px]' : 'ring-4'
-              )}
-            >
+          <div className="flex items-center space-x-4">
+            <div className="h-24 w-24 min-w-fit rounded-full bg-midnight ring-4 ring-zinc-600/30">
               <Image
                 src="https://avatars.githubusercontent.com/u/25696006?v=4"
-                className={clsx(
-                  'h-32 w-32 rounded-full bg-midnight',
-                  bannerExpanded ? 'h-32 w-32' : 'h-24 w-24'
-                )}
+                className="h-24 w-24 rounded-full bg-midnight"
                 width="160"
                 height="160"
                 alt="Profile picture"
               />
             </div>
+            <h1 className="flex flex-col gap-1">
+              <span className="text-3xl font-bold">
+                Henrique Gonçalves
+              </span>
+              <code className="font-mono text-base font-medium">
+                AKA @hnqg
+              </code>
+            </h1>
+          </div>
 
+          <div className="-mt-5 flex items-center space-x-3 text-sm font-bold">
+            <Link href="/writing" passHref>
+              Writing
+            </Link>
+            <Link href="/guestbook" passHref>
+              Guestbook
+            </Link>
             <Link
               href="https://github.com/hnqg"
               target="_blank"
-              className="rounded-xl bg-zinc-700 p-2"
+              className={clsx(
+                'rounded-md bg-rose-100/30 p-1',
+                'shadow-lg transition-all duration-300 ease-out',
+                'hover:scale-[1.2] hover:rounded-[10px] hover:shadow-rose-500/40'
+              )}
             >
-              <GithubLogo size={bannerExpanded ? 24 : 20} />
+              <AiFillGithub size={20} />
             </Link>
-
             <Link
               href="https://www.linkedin.com/in/henriiqueg/"
               target="_blank"
-              className="rounded-xl bg-zinc-700 p-2"
-            >
-              <LinkedinLogo size={bannerExpanded ? 24 : 20} />
-            </Link>
-          </div>
-
-          <div className="-mt-5 flex flex-col items-end justify-between gap-3">
-            <button
-              className="rounded-full bg-zinc-700 p-3"
-              onClick={() => setBannerExpanded((prev) => !prev)}
-            >
-              {bannerExpanded ? (
-                <CaretUp size={16} />
-              ) : (
-                <CaretDown size={16} />
-              )}
-            </button>
-
-            <div
               className={clsx(
-                'gap-2 space-x-3  pb-5 font-bold',
-                bannerExpanded ? 'text-base' : 'text-sm'
+                'rounded-md bg-rose-100/30 p-1',
+                'shadow-lg transition-all duration-300 ease-out',
+                'hover:scale-[1.2] hover:rounded-[10px] hover:shadow-rose-500/40'
               )}
             >
-              <Link href="/about" passHref>
-                About
-              </Link>
-              <Link href="/dashboard" passHref>
-                Dashboard
-              </Link>
-              <Link href="/blog" passHref>
-                Blog
-              </Link>
-              <Link href="/guestbook" passHref>
-                Guestbook
-              </Link>
-            </div>
+              <GrLinkedinOption size={20} />
+            </Link>
           </div>
         </div>
 
-        <h1 className="flex flex-col gap-1">
-          <span className="text-3xl font-bold">
-            Henrique Gonçalves
-          </span>
-          <code className="text-md font-mono font-medium">
-            AKA @hnqg
-          </code>
-        </h1>
-
-        <p
-          className={clsx(
-            bannerExpanded ? 'text-lg' : 'text-base'
-          )}
-        >
-          <span className="underline decoration-neutral-700 decoration-wavy decoration-2">
-            Usual metalhead
-          </span>{' '}
-          with an obsession for code. I like to build cool stuff
-          for the web using top notch technologies.
+        <p className="text-base">
+          Healthily obsessed with designing and coding awesome
+          stuff. Ardent in music, movies, and improving
+          consistently through learning.
+        </p>
+        <p className="text-base">
+          Currently interested in React environment and
+          TypeScript. Experimenting Backend. Studying Software
+          Engineer.
         </p>
 
         <div className="flex w-full items-center justify-between gap-3 border-y-[1px] border-gray-600/20 py-3 text-sm font-semibold">
           <div className="flex items-center gap-1">
-            <Atom size={16} />
+            <FaReact size={16} className="fill-rose-100/50" />
             <span>Front dev @ PagSeguro</span>
           </div>
 
           <div className="flex items-center gap-1">
-            <MapPin size={16} />
+            <BiMap size={16} color="fill-rose-100/50" />
             <span>Pernambuco - Brazil</span>
           </div>
 
           <div className="flex items-center gap-1">
-            <Cake size={16} />
+            <MdOutlineCake size={16} color="fill-rose-100/50" />
             <span>March 20th</span>
           </div>
 
           <div className="flex items-center gap-1">
-            <MusicNote size={16} />
+            <FaDrum size={16} color="fill-rose-100/50" />
             <span>Drummer</span>
           </div>
         </div>

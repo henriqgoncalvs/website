@@ -18,8 +18,8 @@ export const Layout = ({
         <filter id="noise">
           <feTurbulence
             type="fractalNoise"
-            baseFrequency="0.7"
-            numOctaves="12"
+            baseFrequency="0.99"
+            numOctaves="24"
             stitchTiles="stitch"
           />
         </filter>
@@ -30,7 +30,7 @@ export const Layout = ({
         ></rect>
       </svg>
 
-      <main className="mx-auto min-h-screen max-w-[640px] px-4 py-10">
+      <main className="mx-auto min-h-screen max-w-[640px] px-4 pb-10 pt-40">
         {children}
       </main>
 

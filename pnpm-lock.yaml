@@ -2,7 +2,6 @@ lockfileVersion: 5.4
 
 specifiers:
   '@next-auth/prisma-adapter': ^1.0.5
-  '@phosphor-icons/react': ^2.0.5
   '@prisma/client': ^4.9.0
   '@tanstack/react-query': ^4.20.2
   '@trpc/client': ^10.9.0
@@ -23,6 +22,7 @@ specifiers:
   eslint-config-prettier: ^8.7.0
   eslint-plugin-import: ^2.27.5
   eslint-plugin-prettier: ^4.2.1
+  eslint-plugin-unused-imports: ^2.0.0
   framer-motion: ^10.6.0
   husky: ^8.0.3
   lint-staged: ^13.2.0
@@ -34,6 +34,7 @@ specifiers:
   prisma: ^4.9.0
   react: 18.2.0
   react-dom: 18.2.0
+  react-icons: ^4.8.0
   react-use: ^17.4.0
   starfield-react: 3.1.0-dev-5
   superjson: 1.9.1
@@ -43,7 +44,6 @@ specifiers:
 
 dependencies:
   '@next-auth/prisma-adapter': 1.0.5_knaw3qxw4zwoiwojd3fn43zthi
-  '@phosphor-icons/react': 2.0.5_biqbaboplfbrettd7655fr4n2y
   '@prisma/client': 4.11.0_prisma@4.11.0
   '@tanstack/react-query': 4.26.1_biqbaboplfbrettd7655fr4n2y
   '@trpc/client': 10.16.0_@trpc+server@10.16.0
@@ -56,6 +56,7 @@ dependencies:
   next-auth: 4.20.1_ld2jel3hspngo3u5lti2kgl2sq
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-icons: 4.8.0_react@18.2.0
   react-use: 17.4.0_biqbaboplfbrettd7655fr4n2y
   starfield-react: 3.1.0-dev-5_biqbaboplfbrettd7655fr4n2y
   superjson: 1.9.1
@@ -75,6 +76,7 @@ devDependencies:
   eslint-config-prettier: 8.7.0_eslint@8.36.0
   eslint-plugin-import: 2.27.5_a7er6olmtneep4uytpot6gt7wu
   eslint-plugin-prettier: 4.2.1_eqzx3hpkgx5nnvxls3azrcc7dm
+  eslint-plugin-unused-imports: 2.0.0_dchlkxfdm6cbfc25bfo3oeha6e
   husky: 8.0.3
   lint-staged: 13.2.0
   postcss: 8.4.21
@@ -322,17 +324,6 @@ packages:
 
   /@panva/hkdf/1.0.4:
     resolution: {integrity: sha512-003xWiCuvePbLaPHT+CRuaV4GlyCAVm6XYSbBZDHoWZGn1mNkVKFaDbGJjjxmEFvizUwlCoM6O18FCBMMky2zQ==}
-    dev: false
-
-  /@phosphor-icons/react/2.0.5_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-Ghohi+Dk+Y0RoI1vra3jH2QC3sO6C16a/Km0gfy05ONIsC62Vwn1SK2Qaim77VPyn1FS7qjMxocdi9kx6btvXg==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      react: '>= 16.8'
-      react-dom: '>= 16.8'
-    dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /@pkgr/utils/2.3.1:
@@ -1518,6 +1509,26 @@ packages:
       resolve: 2.0.0-next.4
       semver: 6.3.0
       string.prototype.matchall: 4.0.8
+    dev: true
+
+  /eslint-plugin-unused-imports/2.0.0_dchlkxfdm6cbfc25bfo3oeha6e:
+    resolution: {integrity: sha512-3APeS/tQlTrFa167ThtP0Zm0vctjr4M44HMpeg1P4bK6wItarumq0Ma82xorMKdFsWpphQBlRPzw/pxiVELX1A==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      '@typescript-eslint/eslint-plugin': ^5.0.0
+      eslint: ^8.0.0
+    peerDependenciesMeta:
+      '@typescript-eslint/eslint-plugin':
+        optional: true
+    dependencies:
+      '@typescript-eslint/eslint-plugin': 5.55.0_342y7v4tc7ytrrysmit6jo4wri
+      eslint: 8.36.0
+      eslint-rule-composer: 0.3.0
+    dev: true
+
+  /eslint-rule-composer/0.3.0:
+    resolution: {integrity: sha512-bt+Sh8CtDmn2OajxvNO+BX7Wn4CIWMpTRm3MaiKPCQcnnlm0CS2mhui6QaoeQugs+3Kj2ESKEEGJUdVafwhiCg==}
+    engines: {node: '>=4.0.0'}
     dev: true
 
   /eslint-scope/5.1.1:
@@ -2931,6 +2942,14 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+    dev: false
+
+  /react-icons/4.8.0_react@18.2.0:
+    resolution: {integrity: sha512-N6+kOLcihDiAnj5Czu637waJqSnwlMNROzVZMhfX68V/9bu9qHaMIJC4UdozWoOk57gahFCNHwVvWzm0MTzRjg==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react-is/16.13.1:

@@ -20,6 +20,6 @@
 
 @layer base {
   body {
-    @apply bg-midnight text-yellow-50/90;
+    @apply bg-stone-900 text-yellow-50/90 antialiased;
   }
 }
