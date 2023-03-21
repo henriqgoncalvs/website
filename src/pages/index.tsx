@@ -2,6 +2,7 @@ import { type ReactElement } from 'react';
 
 import { Layout } from '@/ui/layout';
 import { ProfileBanner } from '@/ui/profile-banner';
+import { TechIUse } from '@/ui/tech-i-use';
 import { ThingsIveBuilt } from '@/ui/things-ive-built';
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
     <>
       <ProfileBanner />
       <ThingsIveBuilt />
+      <TechIUse />
     </>
   );
 };

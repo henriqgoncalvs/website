@@ -1,6 +1,6 @@
 import { type ReactNode } from 'react';
 
-// import Starfield from '@/ui/starfield';
+import Starfield from '@/ui/starfield';
 
 export const Layout = ({
   children,
@@ -34,7 +34,7 @@ export const Layout = ({
         {children}
       </main>
 
-      {/* <Starfield /> */}
+      <Starfield />
     </>
   );
 };

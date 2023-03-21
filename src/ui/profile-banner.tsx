@@ -82,7 +82,7 @@ export const ProfileBanner = () => {
         <div className="flex w-full items-center justify-between gap-3 border-y-[1px] border-gray-600/20 py-3 text-sm font-semibold">
           <div className="flex items-center gap-1">
             <FaReact size={16} className="fill-rose-100/50" />
-            <span>Front dev @ PagSeguro</span>
+            <span>Frontend @ PagSeguro</span>
           </div>
 
           <div className="flex items-center gap-1">
