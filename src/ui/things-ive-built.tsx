@@ -24,7 +24,7 @@ const ProjectCard = () => {
     <div
       className={clsx(
         'relative rounded-lg border-[1px] border-none bg-white/5 p-4',
-        'transition-all duration-300 ease-out',
+        'transition-all duration-500 ease-out',
         'hover:bg-white/10'
       )}
     >

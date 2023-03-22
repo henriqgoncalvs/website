@@ -42,11 +42,11 @@ export const ProfileBanner = () => {
           <div
             className={clsx(
               'flex items-center space-x-3 self-end text-sm font-bold',
-              'sm:-mt-5 sm:self-auto'
+              'sm:-mt-16 sm:self-auto'
             )}
           >
             <Link
-              href="/writing"
+              href="/about"
               passHref
               className="group flex items-center gap-2"
             >
@@ -59,7 +59,7 @@ export const ProfileBanner = () => {
                 )}
               />
               <span className="transition-all duration-300 ease-out group-hover:text-rose-200">
-                Writing
+                About
               </span>
             </Link>
             <Link
@@ -79,9 +79,10 @@ export const ProfileBanner = () => {
                 Guestbook
               </span>
             </Link>
-            <Link
+            <a
               href="https://github.com/hnqg"
               target="_blank"
+              rel="noopener noreferrer"
               className={clsx(
                 'rounded-md bg-rose-100/30 p-1',
                 'shadow-lg transition-all duration-300 ease-out',
@@ -89,10 +90,11 @@ export const ProfileBanner = () => {
               )}
             >
               <AiFillGithub size={20} />
-            </Link>
-            <Link
+            </a>
+            <a
               href="https://www.linkedin.com/in/henriiqueg/"
               target="_blank"
+              rel="noopener noreferrer"
               className={clsx(
                 'rounded-md bg-rose-100/30 p-1',
                 'shadow-lg transition-all duration-300 ease-out',
@@ -100,7 +102,7 @@ export const ProfileBanner = () => {
               )}
             >
               <GrLinkedinOption size={20} />
-            </Link>
+            </a>
           </div>
         </div>
 
