@@ -3,23 +3,31 @@ import Link from 'next/link';
 import { AiFillGithub } from 'react-icons/ai';
 import { FiExternalLink } from 'react-icons/fi';
 
+import { projects } from '@/data/projects';
+
 export const ThingsIveBuilt = () => {
   return (
     <section className="mt-10 px-4">
       <p className="text-xl">Things I&apos;ve built</p>
 
       <div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
+        {projects.map((project) => (
+          <ProjectCard key={project.title} {...project} />
+        ))}
       </div>
     </section>
   );
 };
 
-const ProjectCard = () => {
+type ProjectCardProps = (typeof projects)[0];
+
+const ProjectCard = ({
+  title,
+  description,
+  gitLink,
+  prodLink,
+  techStack,
+}: ProjectCardProps) => {
   return (
     <div
       className={clsx(
@@ -30,11 +38,12 @@ const ProjectCard = () => {
     >
       <div className="flex flex-col space-y-3">
         <Link
-          href="#"
+          href={prodLink}
           target="_blank"
+          rel="noopener noreferrer"
           className="group flex w-fit items-center space-x-2 text-xl font-semibold"
         >
-          <span>talentuzz</span>
+          <span>{title}</span>
           <FiExternalLink
             size={22}
             className={clsx(
@@ -44,15 +53,10 @@ const ProjectCard = () => {
             )}
           />
         </Link>
-        <p className="text-base">Project description</p>
+        <p className="text-base">{description}</p>
 
         <div className="flex flex-wrap items-center">
-          {[
-            'React',
-            'Next.js',
-            'Tailwind CSS',
-            'TypeScript',
-          ].map((tech) => (
+          {techStack.map((tech) => (
             <span
               key={tech}
               className="mr-2 mt-2 inline-block rounded-md border-[1px] border-zinc-700 px-2 py-1 font-mono text-xs font-semibold"
@@ -64,7 +68,9 @@ const ProjectCard = () => {
       </div>
 
       <Link
-        href="#github"
+        href={gitLink}
+        target="_blank"
+        rel="noopener noreferrer"
         className={clsx(
           'group',
           'absolute top-4 right-4 rounded-lg px-2 py-1'

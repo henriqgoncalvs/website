@@ -1,17 +1,7 @@
 import clsx from 'clsx';
 import { type IconType } from 'react-icons';
-import { IoLogoNodejs } from 'react-icons/io5';
-import { SiNestjs } from 'react-icons/si';
-import {
-  TbBrandTypescript,
-  TbBrandNextjs,
-  TbBrandReact,
-  TbBrandTailwind,
-  TbBrandReactNative,
-  TbBrandPrisma,
-  TbBrandGit,
-  TbBrandDocker,
-} from 'react-icons/tb';
+
+import { techUsed } from '@/data/tech-used';
 
 export const TechIUse = () => {
   return (
@@ -19,30 +9,20 @@ export const TechIUse = () => {
       <p className="text-xl">Tech I use</p>
 
       <div className="mt-5 grid grid-cols-3 gap-2 sm:grid-cols-5">
-        <TechCard name="React" Icon={TbBrandReact} />
-        <TechCard name="Next.js" Icon={TbBrandNextjs} />
-        <TechCard name="Typescript" Icon={TbBrandTypescript} />
-        <TechCard name="TailwindCSS" Icon={TbBrandTailwind} />
-        <TechCard
-          name="React Native"
-          Icon={TbBrandReactNative}
-        />
-        <TechCard name="Node.js" Icon={IoLogoNodejs} />
-        <TechCard name="Prisma" Icon={TbBrandPrisma} />
-        <TechCard name="NestJS" Icon={SiNestjs} />
-        <TechCard name="Git" Icon={TbBrandGit} />
-        <TechCard name="Docker" Icon={TbBrandDocker} />
+        {techUsed.map((tech) => (
+          <TechCard key={tech.title} {...tech} />
+        ))}
       </div>
     </section>
   );
 };
 
 type TechCardProps = {
-  name: string;
+  title: string;
   Icon: IconType;
 };
 
-const TechCard = ({ name, Icon }: TechCardProps) => {
+const TechCard = ({ title, Icon }: TechCardProps) => {
   return (
     <div
       className={clsx(
@@ -51,7 +31,7 @@ const TechCard = ({ name, Icon }: TechCardProps) => {
       )}
     >
       {<Icon size={24} />}
-      <span className="whitespace-nowrap">{name}</span>
+      <span className="whitespace-nowrap">{title}</span>
     </div>
   );
 };
