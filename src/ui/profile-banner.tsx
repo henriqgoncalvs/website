@@ -4,7 +4,9 @@ import Link from 'next/link';
 import { AiFillGithub } from 'react-icons/ai';
 import { BiMap } from 'react-icons/bi';
 import { FaDrum, FaReact } from 'react-icons/fa';
+import { GoBook } from 'react-icons/go';
 import { GrLinkedinOption } from 'react-icons/gr';
+import { HiOutlineDocumentText } from 'react-icons/hi';
 import { MdOutlineCake } from 'react-icons/md';
 
 export const ProfileBanner = () => {
@@ -13,7 +15,8 @@ export const ProfileBanner = () => {
       <div className="z-10 flex flex-col gap-4 px-4">
         <div
           className={clsx(
-            'flex w-full items-start justify-between pb-5'
+            'flex w-full flex-col-reverse items-start justify-between gap-7 pb-5 ',
+            'sm:flex-row sm:gap-0'
           )}
         >
           <div className="flex items-center space-x-4">
@@ -36,12 +39,45 @@ export const ProfileBanner = () => {
             </h1>
           </div>
 
-          <div className="-mt-5 flex items-center space-x-3 text-sm font-bold">
-            <Link href="/writing" passHref>
-              Writing
+          <div
+            className={clsx(
+              'flex items-center space-x-3 self-end text-sm font-bold',
+              'sm:-mt-5 sm:self-auto'
+            )}
+          >
+            <Link
+              href="/writing"
+              passHref
+              className="group flex items-center gap-2"
+            >
+              <HiOutlineDocumentText
+                size={24}
+                className={clsx(
+                  'group-hover:scale-[1.2] group-hover:shadow-rose-500/40',
+                  'shadow-md transition-all duration-300 ease-out',
+                  'rounded-md bg-rose-100/30 p-1'
+                )}
+              />
+              <span className="transition-all duration-300 ease-out group-hover:text-rose-200">
+                Writing
+              </span>
             </Link>
-            <Link href="/guestbook" passHref>
-              Guestbook
+            <Link
+              href="/guestbook"
+              passHref
+              className="group flex items-center gap-2"
+            >
+              <GoBook
+                size={24}
+                className={clsx(
+                  'group-hover:scale-[1.2] group-hover:shadow-rose-500/40',
+                  'shadow-md transition-all duration-300 ease-out',
+                  'rounded-md bg-rose-100/30 p-1'
+                )}
+              />
+              <span className="transition-all duration-300 ease-out group-hover:text-rose-200">
+                Guestbook
+              </span>
             </Link>
             <Link
               href="https://github.com/hnqg"
@@ -79,7 +115,13 @@ export const ProfileBanner = () => {
           Engineer.
         </p>
 
-        <div className="flex w-full items-center justify-between gap-3 border-y-[1px] border-gray-600/20 py-3 text-sm font-semibold">
+        <div
+          className={clsx(
+            'flex flex-row flex-wrap items-center justify-start gap-5 border-y-[1px] border-gray-600/20',
+            'w-full py-3 text-sm font-semibold text-neutral-400/80',
+            'sm:justify-between sm:gap-3'
+          )}
+        >
           <div className="flex items-center gap-1">
             <FaReact size={16} className="fill-rose-100/50" />
             <span>Frontend @ PagSeguro</span>

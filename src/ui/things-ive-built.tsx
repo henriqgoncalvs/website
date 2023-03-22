@@ -8,7 +8,7 @@ export const ThingsIveBuilt = () => {
     <section className="mt-10 px-4">
       <p className="text-xl">Things I&apos;ve built</p>
 
-      <div className="mt-5 grid grid-cols-2 gap-2">
+      <div className="mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2">
         <ProjectCard />
         <ProjectCard />
         <ProjectCard />
@@ -24,18 +24,25 @@ const ProjectCard = () => {
     <div
       className={clsx(
         'relative rounded-lg border-[1px] border-none bg-white/5 p-4',
-        'shadow-md transition-all duration-300 ease-out',
-        'hover:scale-[1.01]  hover:shadow-rose-500/10'
+        'transition-all duration-300 ease-out',
+        'hover:bg-white/10'
       )}
     >
       <div className="flex flex-col space-y-3">
         <Link
           href="#"
           target="_blank"
-          className="flex w-fit items-center space-x-2 text-xl font-semibold"
+          className="group flex w-fit items-center space-x-2 text-xl font-semibold"
         >
           <span>talentuzz</span>
-          <FiExternalLink size={18} />
+          <FiExternalLink
+            size={22}
+            className={clsx(
+              'group-hover:scale-[1.2] group-hover:shadow-rose-500/40',
+              'shadow-md transition-all duration-300 ease-out',
+              'rounded-md bg-rose-100/30 p-1'
+            )}
+          />
         </Link>
         <p className="text-base">Project description</p>
 
