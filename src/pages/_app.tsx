@@ -7,6 +7,7 @@ import {
 import { type Session } from 'next-auth';
 import { SessionProvider } from 'next-auth/react';
 
+import { NavProvider } from '@/providers/nav-provider';
 import { api } from '@/utils/api';
 
 import '@/styles/globals.css';
@@ -23,7 +24,7 @@ const MyApp: NextComponentType<
 
   return (
     <SessionProvider session={session}>
-      {pageContent}
+      <NavProvider>{pageContent}</NavProvider>
     </SessionProvider>
   );
 };

@@ -1,8 +1,9 @@
 import clsx from 'clsx';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import { AiFillGithub } from 'react-icons/ai';
 import { FiExternalLink } from 'react-icons/fi';
 
+import { Link } from '@/components/link';
 import { projects } from '@/data/projects';
 
 export const ThingsIveBuilt = () => {
@@ -37,7 +38,7 @@ const ProjectCard = ({
       )}
     >
       <div className="flex flex-col space-y-3">
-        <Link
+        {/* <NextLink
           href={prodLink}
           target="_blank"
           rel="noopener noreferrer"
@@ -52,6 +53,15 @@ const ProjectCard = ({
               'rounded-md bg-rose-100/30 p-1'
             )}
           />
+        </NextLink> */}
+        <Link
+          href={prodLink}
+          external
+          rightIcon={<FiExternalLink size={22} />}
+          size="lg"
+          className="w-fit font-semibold"
+        >
+          <span>{title}</span>
         </Link>
         <p className="text-base">{description}</p>
 
@@ -67,7 +77,7 @@ const ProjectCard = ({
         </div>
       </div>
 
-      <Link
+      <NextLink
         href={gitLink}
         target="_blank"
         rel="noopener noreferrer"
@@ -85,7 +95,7 @@ const ProjectCard = ({
             'group-hover:scale-[1.2] group-hover:fill-white'
           )}
         />
-      </Link>
+      </NextLink>
     </div>
   );
 };

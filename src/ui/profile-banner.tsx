@@ -1,6 +1,5 @@
 import clsx from 'clsx';
-import Image from 'next/image';
-import Link from 'next/link';
+import { useEffect, useRef } from 'react';
 import { AiFillGithub } from 'react-icons/ai';
 import { BiMap } from 'react-icons/bi';
 import { FaDrum, FaReact } from 'react-icons/fa';
@@ -8,10 +7,38 @@ import { GoBook } from 'react-icons/go';
 import { GrLinkedinOption } from 'react-icons/gr';
 import { HiOutlineDocumentText } from 'react-icons/hi';
 import { MdOutlineCake } from 'react-icons/md';
+import { useIntersection } from 'react-use';
+
+import { Link } from '@/components/link';
+import { useNavContext } from '@/providers/nav-provider';
+
+import { ProfileImage } from '../components/profile-image';
 
 export const ProfileBanner = () => {
+  const { setIsNavOpen, isNavOpen } = useNavContext();
+  const intersectionRef = useRef(null);
+  const intersection = useIntersection(intersectionRef, {
+    root: null,
+    rootMargin: '-150px',
+  });
+
+  useEffect(() => {
+    if (intersection && setIsNavOpen) {
+      setIsNavOpen(!intersection.isIntersecting);
+    }
+  }, [intersection, setIsNavOpen]);
+
   return (
-    <div className="flex flex-col items-start text-xl">
+    <div
+      className={clsx(
+        'flex flex-col items-start text-xl transition duration-300',
+        {
+          'opacity-0': isNavOpen,
+          'opacity-100': !isNavOpen,
+        }
+      )}
+      ref={intersectionRef}
+    >
       <div className="z-10 flex flex-col gap-4 px-4">
         <div
           className={clsx(
@@ -20,15 +47,7 @@ export const ProfileBanner = () => {
           )}
         >
           <div className="flex items-center space-x-4">
-            <div className="h-24 w-24 min-w-fit rounded-full bg-midnight ring-4 ring-zinc-600/30">
-              <Image
-                src="https://avatars.githubusercontent.com/u/25696006?v=4"
-                className="h-24 w-24 rounded-full bg-midnight"
-                width="160"
-                height="160"
-                alt="Profile picture"
-              />
-            </div>
+            <ProfileImage />
             <h1 className="flex flex-col gap-1">
               <span className="text-3xl font-bold">
                 Henrique Gonçalves
@@ -47,62 +66,37 @@ export const ProfileBanner = () => {
           >
             <Link
               href="/about"
-              passHref
-              className="group flex items-center gap-2"
+              leftIcon={<HiOutlineDocumentText />}
+              size="sm"
             >
-              <HiOutlineDocumentText
-                size={24}
-                className={clsx(
-                  'group-hover:scale-[1.2] group-hover:shadow-rose-500/40',
-                  'shadow-md transition-all duration-300 ease-out',
-                  'rounded-md bg-rose-100/30 p-1'
-                )}
-              />
               <span className="transition-all duration-300 ease-out group-hover:text-rose-200">
                 About
               </span>
             </Link>
+
             <Link
               href="/guestbook"
-              passHref
-              className="group flex items-center gap-2"
+              leftIcon={<GoBook />}
+              size="sm"
             >
-              <GoBook
-                size={24}
-                className={clsx(
-                  'group-hover:scale-[1.2] group-hover:shadow-rose-500/40',
-                  'shadow-md transition-all duration-300 ease-out',
-                  'rounded-md bg-rose-100/30 p-1'
-                )}
-              />
               <span className="transition-all duration-300 ease-out group-hover:text-rose-200">
                 Guestbook
               </span>
             </Link>
-            <a
+
+            <Link
               href="https://github.com/hnqg"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={clsx(
-                'rounded-md bg-rose-100/30 p-1',
-                'shadow-lg transition-all duration-300 ease-out',
-                'hover:scale-[1.2] hover:rounded-[10px] hover:shadow-rose-500/40'
-              )}
-            >
-              <AiFillGithub size={20} />
-            </a>
-            <a
+              external
+              leftIcon={<AiFillGithub />}
+              variant="icon-button"
+            />
+
+            <Link
               href="https://www.linkedin.com/in/henriiqueg/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={clsx(
-                'rounded-md bg-rose-100/30 p-1',
-                'shadow-lg transition-all duration-300 ease-out',
-                'hover:scale-[1.2] hover:rounded-[10px] hover:shadow-rose-500/40'
-              )}
-            >
-              <GrLinkedinOption size={20} />
-            </a>
+              external
+              leftIcon={<GrLinkedinOption />}
+              variant="icon-button"
+            />
           </div>
         </div>
 
