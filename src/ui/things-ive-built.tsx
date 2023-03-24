@@ -38,22 +38,6 @@ const ProjectCard = ({
       )}
     >
       <div className="flex flex-col space-y-3">
-        {/* <NextLink
-          href={prodLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group flex w-fit items-center space-x-2 text-xl font-semibold"
-        >
-          <span>{title}</span>
-          <FiExternalLink
-            size={22}
-            className={clsx(
-              'group-hover:scale-[1.2] group-hover:shadow-rose-500/40',
-              'shadow-md transition-all duration-300 ease-out',
-              'rounded-md bg-rose-100/30 p-1'
-            )}
-          />
-        </NextLink> */}
         <Link
           href={prodLink}
           external

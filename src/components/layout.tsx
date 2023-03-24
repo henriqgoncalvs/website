@@ -10,8 +10,7 @@ import { Link } from './link';
 import { Navigation } from './navigation';
 import { ProfileImage } from './profile-image';
 import { Seo } from './seo';
-
-// import Starfield from '@/ui/starfield';
+// import Starfield from './starfield';
 
 export const Layout = ({
   children,

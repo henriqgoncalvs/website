@@ -39,7 +39,7 @@ export const ProfileBanner = () => {
       )}
       ref={intersectionRef}
     >
-      <div className="z-10 flex flex-col gap-4 px-4">
+      <div className="flex flex-col gap-4 px-4">
         <div
           className={clsx(
             'flex w-full flex-col-reverse items-start justify-between gap-7 pb-5 ',
