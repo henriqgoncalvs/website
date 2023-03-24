@@ -83,7 +83,7 @@ export const GuestbookMessages = () => {
       ) : (
         <>
           <button
-            onClick={() => signIn()}
+            onClick={() => signIn('github')}
             className="text-md flex items-center gap-2 rounded-md bg-midnight p-4 font-semibold"
           >
             <AiFillGithub size={18} />
@@ -97,12 +97,14 @@ export const GuestbookMessages = () => {
           guestbookMessages.map((message) => (
             <li
               key={message.id}
-              className="flex items-center gap-2"
+              className="flex items-start gap-2"
             >
               <p className="font-light text-white/30">
                 {message.author.name}:
               </p>
-              <p>{message.message}</p>
+              <p className="max-w-[80%] break-words">
+                {message.message}
+              </p>
             </li>
           ))
         ) : (
