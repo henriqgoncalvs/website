@@ -1,3 +1,4 @@
+import { guestbookRouter } from '@/server/api/routers/guestbook.route';
 import { spotifyRouter } from '@/server/api/routers/spotify.route';
 import { createTRPCRouter } from '@/server/api/trpc';
 
@@ -8,6 +9,7 @@ import { createTRPCRouter } from '@/server/api/trpc';
  */
 export const appRouter = createTRPCRouter({
   spotify: spotifyRouter,
+  guestbook: guestbookRouter,
 });
 
 // export type definition of API

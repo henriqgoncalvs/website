@@ -5,10 +5,11 @@ import {
   type NextAuthOptions,
   type DefaultSession,
 } from 'next-auth';
-import DiscordProvider from 'next-auth/providers/discord';
+import GithubProvider from 'next-auth/providers/github';
 
 import { env } from '@/env.mjs';
 import { prisma } from '@/server/db';
+import { type GuestbookMessage } from '@/types';
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -20,15 +21,19 @@ declare module 'next-auth' {
   interface Session extends DefaultSession {
     user: {
       id: string;
+      name: string | null;
+      email: string | null;
+      guestbookMessages?: GuestbookMessage[];
       // ...other properties
       // role: UserRole;
-    } & DefaultSession['user'];
+    };
   }
 
-  // interface User {
-  //   // ...other properties
-  //   // role: UserRole;
-  // }
+  interface User {
+    name: string;
+    email: string;
+    guestbookMessages?: GuestbookMessage[];
+  }
 }
 
 /**
@@ -40,7 +45,8 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     session({ session, user }) {
       if (session.user) {
-        session.user.id = user.id;
+        console.log({ user });
+        session.user = user;
         // session.user.role = user.role; <-- put other properties on the session here
       }
       return session;
@@ -48,9 +54,16 @@ export const authOptions: NextAuthOptions = {
   },
   adapter: PrismaAdapter(prisma),
   providers: [
-    DiscordProvider({
-      clientId: env.DISCORD_CLIENT_ID,
-      clientSecret: env.DISCORD_CLIENT_SECRET,
+    GithubProvider({
+      clientId: env.GITHUB_CLIENT_ID,
+      clientSecret: env.GITHUB_CLIENT_SECRET,
+      profile(profile) {
+        return {
+          id: profile.id.toString(),
+          email: profile.email,
+          name: profile.name,
+        };
+      },
     }),
     /**
      * ...add more providers here.
