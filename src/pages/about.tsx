@@ -19,8 +19,8 @@ const AboutPage = () => {
         <p className="mb-5">Hey, I&apos;m Henrique 👋</p>
 
         <p className="mb-5">
-          For the I&apos;m a software engineer from Brazil,
-          currently working as{' '}
+          I&apos;m a software engineer from Brazil with 4 years
+          of experience, currently working as{' '}
           <span className="underline decoration-rose-100 decoration-wavy">
             Senior Frontend Engineer
           </span>{' '}
