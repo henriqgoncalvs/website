@@ -11,7 +11,7 @@ import { Link } from './link';
 import { Navigation } from './navigation';
 import { ProfileImage } from './profile-image';
 import { Seo } from './seo';
-import Starfield from './starfield';
+// import Starfield from './starfield';
 
 export const Layout = ({
   children,
@@ -73,7 +73,7 @@ export const Layout = ({
 
       <Footer />
 
-      <Starfield />
+      {/* <Starfield /> */}
     </>
   );
 };
