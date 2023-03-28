@@ -11,7 +11,7 @@ import { Link } from './link';
 import { Navigation } from './navigation';
 import { ProfileImage } from './profile-image';
 import { Seo } from './seo';
-// import Starfield from './starfield';
+import Starfield from './starfield';
 
 export const Layout = ({
   children,
@@ -31,10 +31,14 @@ export const Layout = ({
         <filter id="noise">
           <feTurbulence
             type="fractalNoise"
-            baseFrequency="0.99"
-            numOctaves="24"
+            baseFrequency="0.8"
+            numOctaves="4"
             stitchTiles="stitch"
           />
+          <feColorMatrix
+            type="saturate"
+            values="0"
+          ></feColorMatrix>
         </filter>
         <rect
           width="100%"
@@ -73,7 +77,7 @@ export const Layout = ({
 
       <Footer />
 
-      {/* <Starfield /> */}
+      <Starfield />
     </>
   );
 };
