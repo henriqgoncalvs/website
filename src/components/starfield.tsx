@@ -7,7 +7,7 @@ import { StarField } from 'starfield-react';
 const Starfield: React.FC<{
   speed?: number;
   className?: string;
-}> = ({ speed = 1, className }) => {
+}> = ({ speed = 0.5, className }) => {
   const { width, height } = useWindowSize();
   const [mounted, setMounted] = useState(false);
 
@@ -32,7 +32,6 @@ const Starfield: React.FC<{
           height={height}
           speed={shouldReduceMotion ? 0 : speed}
           noBackground
-          count={1000}
         />
       )}
     </div>
