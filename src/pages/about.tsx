@@ -20,9 +20,9 @@ const AboutPage = () => {
 
         <p className="mb-5">
           I&apos;m a software engineer from Brazil with 4 years
-          of experience, currently working as{' '}
+          of experience, currently working as a{' '}
           <span className="underline decoration-rose-100 decoration-wavy">
-            Senior Frontend Engineer
+            Frontend Engineer
           </span>{' '}
           at a fintech named PagBank and side projects. I&apos;m
           also majoring in Software Engineering.

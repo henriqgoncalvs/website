@@ -27,7 +27,10 @@ const TechCard = ({ title, Icon }: TechCardProps) => {
     <div
       className={clsx(
         'h-22 flex flex-col items-center justify-center space-y-2 font-semibold',
-        'rounded-lg border-[1px] border-none bg-white/5 p-4 text-sm'
+        'rounded-lg border-[1px] border-none bg-white/5 p-4 text-sm',
+        'rounded-md shadow-md',
+        'hover:shadow-rose-500/40 active:translate-y-[2px]',
+        'transition-all duration-300 ease-out'
       )}
     >
       {<Icon size={24} />}

@@ -8,6 +8,12 @@ const timeline: {
   tags?: string[];
 }[] = [
   {
+    size: 'minimized',
+    date: '2022',
+    title:
+      'Started my degree in Software Engineer at UNICESUMAR 🎓',
+  },
+  {
     size: 'main',
     variant: 'work',
     image: '/images/timeline/pagbank.jpg',

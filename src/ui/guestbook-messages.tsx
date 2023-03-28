@@ -13,8 +13,11 @@ export const GuestbookMessages = () => {
 
   const [message, setMessage] = useState('');
 
-  const { data: guestbookMessages, refetch } =
-    api.guestbook.getAll.useQuery();
+  const {
+    data: guestbookMessages,
+    refetch,
+    isLoading: guestbookMessagesLoading,
+  } = api.guestbook.getAll.useQuery();
 
   const { mutateAsync, isLoading } =
     api.guestbook.create.useMutation();
@@ -93,7 +96,12 @@ export const GuestbookMessages = () => {
       )}
 
       <ul className="mt-5 flex flex-col items-stretch space-y-3">
-        {guestbookMessages?.length ? (
+        {guestbookMessagesLoading ? (
+          <p className="flex items-center gap-2 text-sm italic text-gray-500/90">
+            <VscLoading className="animate-spin" />
+            Loading messages...
+          </p>
+        ) : guestbookMessages?.length ? (
           guestbookMessages.map((message) => (
             <li
               key={message.id}
