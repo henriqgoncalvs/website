@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import Image from 'next/image';
 import NextLink from 'next/link';
 import { AiFillGithub } from 'react-icons/ai';
 import { FiExternalLink } from 'react-icons/fi';
@@ -28,6 +29,7 @@ const ProjectCard = ({
   gitLink,
   prodLink,
   techStack,
+  thumb,
 }: ProjectCardProps) => {
   return (
     <div
@@ -45,6 +47,13 @@ const ProjectCard = ({
           size="lg"
           className="w-fit font-semibold"
         >
+          <Image
+            src={thumb}
+            alt={`${title} logo`}
+            width="32"
+            height="32"
+            className="rounded-md"
+          />
           <span>{title}</span>
         </Link>
         <p className="text-base">{description}</p>
@@ -71,7 +80,7 @@ const ProjectCard = ({
         )}
       >
         <AiFillGithub
-          size={24}
+          size={28}
           color="#ffe4e64d"
           className={clsx(
             'fill-rose-100/30',

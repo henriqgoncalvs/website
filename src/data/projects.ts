@@ -15,6 +15,7 @@ export const projects = [
       'RTL',
       'Storybook',
     ],
+    thumb: '/images/projects-logo/talentuzz-logo.png',
   },
   {
     title: 'me3',
@@ -29,6 +30,7 @@ export const projects = [
       'tRPC',
       'Prisma',
     ],
+    thumb: '/images/projects-logo/me3-logo.png',
   },
   {
     title: 'anti-termo',
@@ -43,5 +45,6 @@ export const projects = [
       'Zustand',
       'Framer Motion',
     ],
+    thumb: '/images/projects-logo/at-logo.png',
   },
 ];

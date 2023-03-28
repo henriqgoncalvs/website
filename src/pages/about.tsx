@@ -12,7 +12,7 @@ const AboutPage = () => {
   });
 
   return (
-    <main className="px-4">
+    <main className="px-4 pt-5 sm:pt-0">
       <p className="text-xl font-semibold">About me</p>
 
       <div className="mt-10">

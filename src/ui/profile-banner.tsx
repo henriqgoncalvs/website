@@ -120,7 +120,7 @@ export const ProfileBanner = () => {
         >
           <div className="flex items-center gap-1">
             <FaReact size={16} className="fill-rose-100/50" />
-            <span>Frontend @ PagSeguro</span>
+            <span>Front end @ PagSeguro</span>
           </div>
 
           <div className="flex items-center gap-1">

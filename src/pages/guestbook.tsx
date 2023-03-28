@@ -12,7 +12,7 @@ const GuestbookPage = () => {
   });
 
   return (
-    <main className="px-4">
+    <main className="px-4 pt-5 sm:pt-0">
       <p className="text-xl font-semibold">Guestbook</p>
 
       <div className="mt-10">
