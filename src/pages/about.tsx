@@ -51,9 +51,9 @@ const AboutPage = () => {
         <p className="mb-5">
           It&apos;s been 4 years since I started working with
           React and JavaScript. I&apos;m also a big fan of
-          TypeScript and Next.js. When I&apos;m not writting
-          React code, I&apos;m experimenting a lot wrtting
-          Backend code with Node and Go.
+          TypeScript and Next.js. When I&apos;m not writing React
+          code, I&apos;m experimenting a lot writing Backend code
+          with Node and Go.
         </p>
 
         <p>
