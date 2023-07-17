@@ -40,22 +40,35 @@ const ProjectCard = ({
       )}
     >
       <div className="flex flex-col space-y-3">
-        <Link
-          href={prodLink}
-          external
-          rightIcon={<FiExternalLink size={22} />}
-          size="lg"
-          className="w-fit font-semibold"
-        >
-          <Image
-            src={thumb}
-            alt={`${title} logo`}
-            width="32"
-            height="32"
-            className="rounded-md"
-          />
-          <span>{title}</span>
-        </Link>
+        {prodLink ? (
+          <Link
+            href={prodLink}
+            external
+            rightIcon={<FiExternalLink size={22} />}
+            size="lg"
+            className="w-fit font-semibold"
+          >
+            <Image
+              src={thumb}
+              alt={`${title} logo`}
+              width="32"
+              height="32"
+              className="rounded-md"
+            />
+            <span>{title}</span>
+          </Link>
+        ) : (
+          <p className="group flex w-fit items-center gap-2 text-lg font-semibold">
+            <Image
+              src={thumb}
+              alt={`${title} logo`}
+              width="32"
+              height="32"
+              className="rounded-md"
+            />
+            <span>{title}</span>
+          </p>
+        )}
         <p className="text-base">{description}</p>
 
         <div className="flex flex-wrap items-center">
