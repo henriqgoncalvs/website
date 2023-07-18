@@ -1,5 +1,20 @@
 export const projects = [
   {
+    title: 'me3',
+    description:
+      'Describe yourself in 3 things and share with your friends.',
+    gitLink: 'https://github.com/hnqg/me3',
+    prodLink: 'https://me3.hnqg.io/',
+    techStack: [
+      'TypeScript',
+      'Next.js',
+      'TailwindCSS',
+      'tRPC',
+      'Prisma',
+    ],
+    thumb: '/images/projects-logo/me3-logo.png',
+  },
+  {
     title: 'talentuzz',
     description:
       'An app for managing organization job postings.',
@@ -18,22 +33,22 @@ export const projects = [
     thumb: '/images/projects-logo/talentuzz-logo.png',
   },
   {
-    title: 'me3',
-    description:
-      'Describe yourself in 3 things and share with your friends.',
-    gitLink: 'https://github.com/hnqg/me3',
-    prodLink: 'https://me3.hnqg.io/',
+    title: 'talentuzz-api',
+    description: 'A REST API with NestJS for talentuzz.',
+    prodLink: 'https://talentuzz-api.onrender.com/docs',
+    gitLink: 'https://github.com/hnqg/talentuzz-api',
     techStack: [
+      'NestJS',
       'TypeScript',
-      'Next.js',
-      'TailwindCSS',
-      'tRPC',
+      'PostgreSQL',
       'Prisma',
+      'Swagger',
+      'Docker',
     ],
-    thumb: '/images/projects-logo/me3-logo.png',
+    thumb: '/images/projects-logo/talentuzz-api-logo.png',
   },
   {
-    title: 'react leap',
+    title: 'react-leap',
     description:
       'Boilerplate for enterprise applications with React.',
     gitLink: 'https://github.com/hnqg/react-leap',
@@ -50,7 +65,7 @@ export const projects = [
   {
     title: 'anti-termo',
     description:
-      'Just like Wordle, but you have to miss the word of the day.',
+      'Like Wordle, but you have to MISS the word of the day. Portuguese only.',
     gitLink: 'https://github.com/hnqg/anti-termo',
     prodLink: 'https://antitermo.hnqg.io/',
     techStack: [
@@ -61,20 +76,5 @@ export const projects = [
       'Framer Motion',
     ],
     thumb: '/images/projects-logo/at-logo.png',
-  },
-  {
-    title: 'talentuzz api',
-    description: 'A REST API with NestJS for talentuzz.',
-    gitLink: 'https://github.com/hnqg/talentuzz-api',
-    techStack: [
-      'NestJS',
-      'TypeScript',
-      'PostgreSQL',
-      'Prisma',
-      'Swagger',
-      'Docker',
-      'Heroku',
-    ],
-    thumb: '/images/projects-logo/talentuzz-api-logo.png',
   },
 ];
