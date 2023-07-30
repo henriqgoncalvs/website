@@ -136,7 +136,7 @@ const Footer = () => {
 
           <div className="flex flex-col items-start gap-4">
             <Link
-              href="https://github.com/hnqg"
+              href="https://github.com/henriqgoncalvs"
               external
               variant="link"
             >

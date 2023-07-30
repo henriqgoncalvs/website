@@ -71,7 +71,7 @@ export const ProfileBannerWithCover = () => {
             </div>
 
             <Link
-              href="https://github.com/hnqg"
+              href="https://github.com/henriqgoncalvs"
               target="_blank"
               className="rounded-xl bg-zinc-700 p-2"
             >
@@ -126,7 +126,7 @@ export const ProfileBannerWithCover = () => {
             Henrique Gonçalves
           </span>
           <code className="text-md font-mono font-medium">
-            AKA @hnqg
+            AKA @henriqgoncalvs
           </code>
         </h1>
 

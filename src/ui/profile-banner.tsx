@@ -53,7 +53,7 @@ export const ProfileBanner = () => {
                 Henrique Gonçalves
               </span>
               <code className="font-mono text-base font-medium">
-                AKA @hnqg
+                AKA @henriqgoncalvs
               </code>
             </h1>
           </div>
@@ -85,7 +85,7 @@ export const ProfileBanner = () => {
             </Link>
 
             <Link
-              href="https://github.com/hnqg"
+              href="https://github.com/henriqgoncalvs"
               external
               leftIcon={<AiFillGithub />}
               variant="icon-button"
@@ -120,7 +120,7 @@ export const ProfileBanner = () => {
         >
           <div className="flex items-center gap-1">
             <FaReact size={16} className="fill-rose-100/50" />
-            <span>Front end @ PagSeguro</span>
+            <span>Front end @ PagBank</span>
           </div>
 
           <div className="flex items-center gap-1">

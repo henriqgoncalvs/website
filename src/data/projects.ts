@@ -3,8 +3,8 @@ export const projects = [
     title: 'me3',
     description:
       'Describe yourself in 3 things and share with your friends.',
-    gitLink: 'https://github.com/hnqg/me3',
-    prodLink: 'https://me3.hnqg.io/',
+    gitLink: 'https://github.com/henriqgoncalvs/me3',
+    prodLink: 'https://me3-henriiqueg.vercel.app/',
     techStack: [
       'TypeScript',
       'Next.js',
@@ -18,8 +18,8 @@ export const projects = [
     title: 'talentuzz',
     description:
       'An app for managing organization job postings.',
-    gitLink: 'https://github.com/hnqg/talentuzz',
-    prodLink: 'https://talentuzz.hnqg.io/',
+    gitLink: 'https://github.com/henriqgoncalvs/talentuzz',
+    prodLink: 'https://talentuzz.vercel.app/',
     techStack: [
       'TypeScript',
       'Next.js',
@@ -36,7 +36,7 @@ export const projects = [
     title: 'talentuzz-api',
     description: 'A REST API with NestJS for talentuzz.',
     prodLink: 'https://talentuzz-api.onrender.com/docs',
-    gitLink: 'https://github.com/hnqg/talentuzz-api',
+    gitLink: 'https://github.com/henriqgoncalvs/talentuzz-api',
     techStack: [
       'NestJS',
       'TypeScript',
@@ -51,7 +51,7 @@ export const projects = [
     title: 'react-leap',
     description:
       'Boilerplate for enterprise applications with React.',
-    gitLink: 'https://github.com/hnqg/react-leap',
+    gitLink: 'https://github.com/henriqgoncalvs/react-leap',
     techStack: [
       'TypeScript',
       'React',
@@ -66,8 +66,8 @@ export const projects = [
     title: 'anti-termo',
     description:
       'Like Wordle, but you have to MISS the word of the day. Portuguese only.',
-    gitLink: 'https://github.com/hnqg/anti-termo',
-    prodLink: 'https://antitermo.hnqg.io/',
+    gitLink: 'https://github.com/henriqgoncalvs/anti-termo',
+    prodLink: 'https://anti-termo.vercel.app/',
     techStack: [
       'TypeScript',
       'Next.js',

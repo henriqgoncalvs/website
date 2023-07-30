@@ -8,14 +8,15 @@ const defaultMeta = {
   description:
     'Healthily obsessed with designing and coding awesome stuff.',
   /** Without additional '/' on the end, e.g. https://theodorusclarence.com */
-  url: 'https://hnqg.io',
+  url: 'https://henriqgoncalvs.com',
   type: 'website',
   robots: 'follow, index',
   /**
    * No need to be filled, will be populated with openGraph function
    * If you wish to use a normal image, just specify the path below
    */
-  image: 'https://hnqg.io/images/opengraph-banner.png',
+  image:
+    'https://henriqgoncalvs.com/images/opengraph-banner.png',
 };
 
 type SeoProps = {
@@ -62,8 +63,8 @@ export const Seo = (props: SeoProps) => {
       />
       {/* Twitter */}
       <meta name="twitter:card" content="app" />
-      <meta name="twitter:site" content="@_hnqg" />
-      <meta name="twitter:creator" content="@_hnqg" />
+      <meta name="twitter:site" content="@henriqgoncalvs" />
+      <meta name="twitter:creator" content="@henriqgoncalvs" />
       <meta name="twitter:title" content={meta.title} />
       <meta
         name="twitter:description"

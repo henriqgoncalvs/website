@@ -25,7 +25,7 @@ export const Navigation = () => {
       </Link>
 
       <Link
-        href="https://github.com/hnqg"
+        href="https://github.com/henriqgoncalvs"
         external
         leftIcon={<AiFillGithub />}
         variant="icon-button"
