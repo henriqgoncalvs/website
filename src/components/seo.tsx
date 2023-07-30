@@ -15,8 +15,7 @@ const defaultMeta = {
    * No need to be filled, will be populated with openGraph function
    * If you wish to use a normal image, just specify the path below
    */
-  image:
-    'https://henriqgoncalvs.com/images/opengraph-banner.png',
+  image: 'https://henriqgoncalvs.com/images/open-graph.png',
 };
 
 type SeoProps = {
